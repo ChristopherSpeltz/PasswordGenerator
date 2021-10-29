@@ -1,9 +1,17 @@
 // Assignment code here
 //Created password characters here:
-var CaseU = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var CaseL = 'abcdefghijklmnopqrstuvwxyz';
+var caseU = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var caseL = 'abcdefghijklmnopqrstuvwxyz';
 var charNum = '0123456789';
 var charSpec = '!"#$%&*+,-./:;<=>?@^_`|~';
+
+//character array
+charArray = [caseU, caseL, charNum, charSpec];
+
+
+function generatePassword() {
+  
+}
 
 
 // Get references to the #generate element
