@@ -1,6 +1,10 @@
 // Assignment code here
-const generate = document.getElementById
-('generate')
+//Created password characters here:
+var CaseU = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var CaseL = 'abcdefghijklmnopqrstuvwxyz';
+var charNum = '0123456789';
+var charSpec = '!"#$%&*+,-./:;<=>?@^_`|~';
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
