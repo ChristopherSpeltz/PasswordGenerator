@@ -8,21 +8,21 @@ const charTypes = {
   caseL: 'abcdefghijklmnopqrstuvwxyz',
 }
 
-// created array of functions to generate random characters from strings
-const randomNumber = [
-  function caseU() {
-    return charTypes.caseU[Math.floor(Math.random() * charTypes.caseU.length)];
-  },
-  function caseU() {
-    return charTypes.caseL[Math.floor(Math.random() * charTypes.caseL.length)];
-  },
-  function charNum() {
-    return charTypes.charNum[Math.floor(Math.random() * charTypes.charNum.length)];
-  },
-  function charSpec() {
-    return charTypes.charSpec[Math.floor(Math.random() * charTypes.charSpec.length)];
-  }
-];
+// // created array of functions to generate random characters from strings
+// const randomNumber = [
+//   function caseU() {
+//     return charTypes.caseU[Math.floor(Math.random() * charTypes.caseU.length)];
+//   },
+//   function caseU() {
+//     return charTypes.caseL[Math.floor(Math.random() * charTypes.caseL.length)];
+//   },
+//   function charNum() {
+//     return charTypes.charNum[Math.floor(Math.random() * charTypes.charNum.length)];
+//   },
+//   function charSpec() {
+//     return charTypes.charSpec[Math.floor(Math.random() * charTypes.charSpec.length)];
+//   }
+// ];
 
 function generatePassword() {
   
@@ -44,6 +44,9 @@ function generatePassword() {
     return;
   }
 
+// WORKED WITH TUTOR
+  let selectedCharacters = "";
+
   // password criteria selection
   let yesCharLower = window.confirm("Click Ok for lowercase characters.");
   let yesCharUpper = window.confirm("Click Ok for uppercase characters.");
@@ -54,9 +57,37 @@ function generatePassword() {
       window.alert("You must select one character type to continue.");
       generatePassword();
         return;
+}
+
+// checking characters selected and adding characters to selected string - WORKED WITH TUTOR
+  if (yesCharLower) {
+    selectedCharacters += charTypes.caseL;
+  }
+
+  if (yesCharUpper) {
+    selectedCharacters += charTypes.caseU;
+  }
+
+  if (yesCharNum) {
+    selectedCharacters += charTypes.charNum;
+  }
+
+  if (yesCharSpec) {
+    selectedCharacters += charTypes.charSpec;
+  }
 
 
-}}
+// creating random passwords with selected characters - WORKED WITH TUTOR
+  let finishedPassword = "";
+  for (let index = 0; index < pwLength; index++) {
+    let randomNumber = Math.floor (Math.random() * selectedCharacters.length)
+    let randomCharacter = selectedCharacters[randomNumber]
+    finishedPassword += randomCharacter
+  };
+
+// returning finished password - WORKED WITH TUTOR
+  return finishedPassword;
+}
 
 
 
